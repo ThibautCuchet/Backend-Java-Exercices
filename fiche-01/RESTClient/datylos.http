@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:8080/texts
+
+### View all dactylos : GET texts
+GET {{baseUrl}}
+
+
+### Add a dactylo : POST texts
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "content": "Facile",
+  "level": "easy"
+}
+
+
+### Add a dactylo : POST texts
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "content": "Un text moyennement facile",
+  "level": "medium"
+}
+
+
+### Update dactylo with ID == 2 : PUT texts/{id}
+PUT {{baseUrl}}/2
+Content-Type: application/json
+
+{
+  "content": "Changeons un peu la difficulte de ce texte pour le rendre un peu plus dur",
+  "level": "hard"
+}
+
+### Get dactylos with level == easy : GET texts?level=value
+GET {{baseUrl}}?level=easy
+
+
+### Get dactylo with ID == 1 : GET texts/{id}
+GET {{baseUrl}}/1
+
